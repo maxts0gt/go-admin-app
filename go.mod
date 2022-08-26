@@ -1,12 +1,10 @@
-module ambassador
+module github.com/maxts0gt/go-ambassador
 
 go 1.18
 
 require github.com/gofiber/fiber/v2 v2.36.0
 
-require (
-	golang.org/x/crypto v0.0.0-20220817201139-bc19a97f63c8
-)
+require golang.org/x/crypto v0.0.0-20220817201139-bc19a97f63c8
 
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect

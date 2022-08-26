@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"ambassador/src/controllers"
+	"github.com/maxts0gt/go-ambassador/src/controllers"
 
 	"github.com/gofiber/fiber/v2"
 )

@@ -1,9 +1,10 @@
 package controllers
 
 import (
-	"ambassador/src/database"
-	"ambassador/src/models"
 	"time"
+
+	"github.com/maxts0gt/go-ambassador/src/database"
+	"github.com/maxts0gt/go-ambassador/src/models"
 
 	"strconv"
 
