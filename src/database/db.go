@@ -2,7 +2,6 @@ package database
 
 import (
 	"github.com/maxts0gt/go-ambassador/src/models"
-
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
