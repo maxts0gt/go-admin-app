@@ -33,7 +33,7 @@ func Setup(app *fiber.App) {
 	ambassador.Post("register", controllers.Register)
 	ambassador.Post("login", controllers.Login)
 
-	ambassadorAuthenticated := admin.Use(middlewares.IsAuthenticated)
+	ambassadorAuthenticated := ambassador.Use(middlewares.IsAuthenticated)
 	ambassadorAuthenticated.Get("user", controllers.User)
 	ambassadorAuthenticated.Post("logout", controllers.Logout)
 	ambassadorAuthenticated.Put("users/info", controllers.UpdateInfo)
