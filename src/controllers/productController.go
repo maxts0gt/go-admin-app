@@ -41,8 +41,8 @@ func GetProduct(c *fiber.Ctx) error {
 }
 
 func UpdateProduct(c *fiber.Ctx) error {
-
 	id, _ := strconv.Atoi(c.Params("id"))
+
 	product := models.Product{}
 	product.Id = uint(id)
 
@@ -50,7 +50,19 @@ func UpdateProduct(c *fiber.Ctx) error {
 		return err
 	}
 	database.DB.Model(&product).Updates(&product)
+
+	go deleteCache("product_frontend")
+	go deleteCache("product_backend")
+
 	return c.JSON(product)
+}
+
+func deleteCache(key string) {
+
+	time.Sleep(5 * time.Second)
+
+	database.Cache.Del(context.Background(), key)
+
 }
 
 func DeleteProduct(c *fiber.Ctx) error {
